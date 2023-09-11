@@ -13,6 +13,9 @@
   roles:
     - role: ethpandaops.general.bootstrap
       tags: [bootstrap]
+      oh_my_zsh_user: ubuntu
+      oh_my_zsh_theme: agnoster
+      oh_my_zsh_plugins: asdf,git,go
 
 - name: "Configure zsh for the default ansible user"
   hosts: "{{ target | default('all') }}"
@@ -21,6 +24,9 @@
   roles:
     - role: ethpandaops.general.oh_my_zsh
       tags: ["oh_my_zsh"]
+      oh_my_zsh_user: ubuntu
+      oh_my_zsh_theme: agnoster
+      oh_my_zsh_plugins: asdf,git,go
 
 - name: "Configure zsh for the root user"
   hosts: "{{ target | default('all') }}"
@@ -29,4 +35,7 @@
   roles:
     - role: ethpandaops.general.oh_my_zsh
       oh_my_zsh_user: root
+      oh_my_zsh_theme: agnoster
+      oh_my_zsh_plugins: asdf,git,go
       tags: ["oh_my_zsh"]
+      
